@@ -35,5 +35,8 @@
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
     "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "nanoid": "^2.1.6"
   }
 }
