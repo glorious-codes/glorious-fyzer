@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "source": {
+      "root": "src/scripts/",
+      "files": "src/scripts/**/*.js",
+      "entry": "src/scripts/index.js"
+    },
+    "dist": {
+      "root": "dist",
+      "filename": {
+        "prod": "fyzer.min.js",
+        "dev": "fyzer.js"
+      }
+    }
+  }
+}
