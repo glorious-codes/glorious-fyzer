@@ -1,4 +1,4 @@
-import { idService } from './services/id';
+import idService from './services/id';
 import windowService from './services/window';
 
 const _public = {};

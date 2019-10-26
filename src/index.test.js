@@ -1,7 +1,7 @@
 import windowService from './services/window';
 import fyzer from './index';
 
-describe('Page Fold Service', () => {
+describe('Fyzer', () => {
   function stubAbovePageFold(isAbovePageFold){
     windowService.isElementAbovePageFold = jest.fn(() => isAbovePageFold);
   }
