@@ -1,22 +1,23 @@
-import generateNanoId from 'nanoid/generate';
+import shortid from 'shortid';
 
-class IdService {
-  constructor(dependencies = {}){
-    this.generateNanoId = dependencies.generateNanoId || generateNanoId;
-  }
+const _public = {};
 
-  generate(){
-    return this.generateNanoId(getValidChars(), 12);
-  }
-}
+_public.init = () => {
+  setValidChars(buildValidChars());
+};
 
-function getValidChars(){
+_public.generate = () => {
+  shortid.generate();
+};
+
+function buildValidChars(){
   return '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz$_';
 }
 
-const idService = new IdService();
+function setValidChars(chars){
+  shortid.characters(chars);
+}
 
-export {
-  idService,
-  IdService
-};
+_public.init();
+
+export default _public;
