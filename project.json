@@ -1,9 +1,9 @@
 {
   "scripts": {
     "source": {
-      "root": "src/scripts/",
-      "files": "src/scripts/**/*.js",
-      "entry": "src/scripts/index.js"
+      "root": "src/",
+      "files": "src/**/*.js",
+      "entry": "src/index.js"
     },
     "dist": {
       "root": "dist",

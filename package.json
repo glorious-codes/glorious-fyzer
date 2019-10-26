@@ -1,11 +1,16 @@
 {
-  "name": "glorious-fyzer",
+  "name": "@glorious/fyzer",
   "version": "0.1.0",
   "description": "Listen when some element just appears above the page fold",
-  "main": "src/index.js",
+  "main": "dist/fyzer.min.js",
+  "files": [
+    "dist/**/*.*"
+  ],
   "scripts": {
+    "format": "eslint 'src/**/*.js'",
     "build": "webpack",
-    "test": "jest"
+    "test": "jest",
+    "prepublishOnly": "rm -rf ./dist && NODE_ENV=production npm run build"
   },
   "repository": {
     "type": "git",
