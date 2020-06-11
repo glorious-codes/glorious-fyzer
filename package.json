@@ -1,6 +1,6 @@
 {
   "name": "@glorious/fyzer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Listen when some element just appears above the page fold",
   "main": "dist/fyzer.min.js",
   "files": [

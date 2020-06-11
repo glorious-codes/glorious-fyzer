@@ -7,7 +7,7 @@ _public.init = () => {
 };
 
 _public.generate = () => {
-  shortid.generate();
+  return shortid.generate();
 };
 
 function buildValidChars(){
