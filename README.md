@@ -2,7 +2,6 @@
 > The easiest way to be notified when some element appears above the page fold
 
 [![CircleCI](https://circleci.com/gh/glorious-codes/glorious-fyzer.svg?style=svg)](https://circleci.com/gh/glorious-codes/glorious-fyzer)
-[![codecov](https://codecov.io/gh/glorious-codes/glorious-fyzer/branch/master/graph/badge.svg)](https://codecov.io/gh/glorious-codes/glorious-fyzer)
 
 ## Installation
 
