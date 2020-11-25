@@ -9,6 +9,7 @@
   "scripts": {
     "format": "eslint 'src/**/*.js'",
     "build": "webpack",
+    "start": "http-server . -p 5000",
     "test": "jest",
     "prepublishOnly": "rm -rf ./dist && NODE_ENV=production npm run build"
   },
