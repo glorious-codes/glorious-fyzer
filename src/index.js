@@ -3,19 +3,15 @@ import windowService from './services/window';
 
 const _public = {};
 
-const subscribers = [];
-
-_public.init = () => {
-  windowService.onScroll(onWindowScroll);
-};
+let subscribers = [];
 
 _public.subscribe = (element, onShowUp) => {
-  setTimeout(() => handleShowUpCallback(element, onShowUp));
+  handleShowUpCallback(element, onShowUp);
   return addSubscriber(element, onShowUp);
 };
 
 _public.unsubscribe = subscriberId => {
-  subscribers.splice(findSubscriberById(subscriberId), 1);
+  subscribers = subscribers.filter(subscriber => subscriber.id !== subscriberId);
 };
 
 function addSubscriber(element, onShowUp){
@@ -24,19 +20,14 @@ function addSubscriber(element, onShowUp){
   return id;
 }
 
-function findSubscriberById(id){
-  return subscribers.find(subscriber => subscriber.id === id);
-}
-
-function onWindowScroll(){
+function onWindowChange(){
   subscribers.forEach(({ element, onShowUp }) => handleShowUpCallback(element, onShowUp));
 }
 
 function handleShowUpCallback(element, callback){
-  if(windowService.isElementAbovePageFold(element))
-    callback();
+  setTimeout(() => windowService.isElementAbovePageFold(element) && callback());
 }
 
-_public.init();
+windowService.listenChanges(onWindowChange);
 
 export default _public;

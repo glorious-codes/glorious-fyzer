@@ -29,7 +29,7 @@
       "rules": {
         "max-lines": ["error", { "max": 200 }],
         "max-statements": [
-          "error", { "max": 10 },
+          "error", { "max": 15 },
           { "ignoreTopLevelFunctions": true }
         ]
       }
