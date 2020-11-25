@@ -1,7 +1,9 @@
 const _public = {};
 
-_public.onScroll = callback => {
-  window.addEventListener('scroll', callback);
+_public.listenChanges = callback => {
+  ['scroll', 'resize', 'load'].forEach(listener => {
+    window.addEventListener(listener, callback);
+  });
 };
 
 _public.isElementAbovePageFold = element => {

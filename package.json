@@ -1,6 +1,6 @@
 {
   "name": "@glorious/fyzer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Listen when some element just appears above the page fold",
   "main": "dist/fyzer.min.js",
   "files": [
@@ -9,6 +9,7 @@
   "scripts": {
     "format": "eslint 'src/**/*.js'",
     "build": "webpack",
+    "start": "http-server . -p 5000",
     "test": "jest",
     "prepublishOnly": "rm -rf ./dist && NODE_ENV=production npm run build"
   },
@@ -29,19 +30,19 @@
   },
   "homepage": "https://github.com/glorious-codes/glorious-fyzer#readme",
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/preset-env": "^7.6.3",
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
     "babel-jest": "^24.9.0",
-    "babel-loader": "^8.0.6",
-    "codecov": "^3.0.4",
+    "babel-loader": "^8.2.1",
+    "codecov": "^3.8.1",
     "eslint": "^5.6.0",
     "jest": "^24.9.0",
-    "terser-webpack-plugin": "^2.2.1",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.9",
+    "terser-webpack-plugin": "^2.3.8",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "shortid": "^2.2.15"
+    "shortid": "^2.2.16"
   }
 }

@@ -12,11 +12,13 @@ describe('Window Service', () => {
     windowService.getPageYOffset = getPageYOffset;
   });
 
-  it('should be able to set some window scroll listener', () => {
+  it('should listen for the presence of an element inside the viewport', () => {
     const callback = jest.fn();
     window.addEventListener = jest.fn();
-    windowService.onScroll(callback);
+    windowService.listenChanges(callback);
     expect(window.addEventListener).toHaveBeenCalledWith('scroll', callback);
+    expect(window.addEventListener).toHaveBeenCalledWith('resize', callback);
+    expect(window.addEventListener).toHaveBeenCalledWith('load', callback);
   });
 
   it('should answer if an element is above the page fold', () => {

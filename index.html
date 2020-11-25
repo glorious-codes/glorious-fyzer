@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      body { text-align: center; }
+      span { display: inline-block; padding: 10px; background-color: #C6C6C6; opacity: 0; transition: opacity 1000ms;}
+      .first { margin-top: 100px; }
+      .second { margin: 1500px 0 200px 0; }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span class="first" data-first-el>First Element</span>
+    </div>
+    <div>
+      <span class="second" data-second-el>Second Element</span>
+    </div>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <script src="./dist/fyzer.js"></script>
+    <script>
+      (function(){
+        function init(){
+          const [ firstId, secondId ] = ['[data-first-el]','[data-second-el]'].map(selector => {
+            const el = queryElement(selector);
+            const id = fyzer.subscribe(el, () => {
+              el.style.opacity = '1';
+              fyzer.unsubscribe(id);
+              console.log('unsubscribed:', id)
+            });
+            return id;
+          });
+          console.log('subscribed first el:', firstId)
+          console.log('subscribed second el:', secondId)
+        }
+
+        function queryElement(customAttr){
+          return document.querySelector(customAttr);
+        }
+
+        init();
+      }())
+    </script>
+  </body>
+</html>
